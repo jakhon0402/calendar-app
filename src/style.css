@@ -1,0 +1,9 @@
+.next{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.next[is-next=true] {
+    justify-content:flex-end;
+}
