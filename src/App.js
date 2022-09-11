@@ -55,8 +55,8 @@ function App() {
     const nextMonth = () => {
         setDirection(1)
         if (month == 11) {
-            setMonth(0)
             setYear(prev => prev + 1)
+            setMonth(0)
             setDirectionY(-1)
         } else setMonth(prev => prev + 1)
 
@@ -87,10 +87,9 @@ function App() {
         const calendarDays = []
         let daysLength = 0
         let firstDayOfMonth = new Date(year, month, 1).getDay()
-        let lastDays
-        if (firstDayOfMonth == 0)
-            lastDays = 6
-        lastDays = firstDayOfMonth - 1
+        let lastDays = (firstDayOfMonth == 0) ? 6 : firstDayOfMonth - 1
+
+
         let lastMonth = month == 0 ? 11 : month - 1
         let nextMonth = month == 11 ? 0 : month + 1
         let lastYear = month == 0 ? year - 1 : year
